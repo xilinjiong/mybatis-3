@@ -270,6 +270,12 @@
           <version>1.18.16</version>
           <scope>test</scope>
       </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.35</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -297,6 +303,7 @@
               <value>${project.build.directory}</value>
             </property>
           </systemProperties>
+          <skipTests>true</skipTests>
         </configuration>
       </plugin>
       <plugin>
@@ -433,7 +440,7 @@
           </snapshots>
           <id>central</id>
           <name>Central Repository</name>
-          <url>http://repo1.maven.org/maven2/</url>
+          <url>https://maven.aliyun.com/repository/public</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -446,7 +453,7 @@
           </snapshots>
           <id>central</id>
           <name>Central Repository</name>
-          <url>http://repo1.maven.org/maven2/</url>
+          <url>https://maven.aliyun.com/repository/public</url>
         </pluginRepository>
       </pluginRepositories>
     </profile>

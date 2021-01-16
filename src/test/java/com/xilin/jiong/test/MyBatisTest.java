@@ -1,6 +1,8 @@
 package com.xilin.jiong.test;
 
+import com.xilin.jiong.bean.Student;
 import com.xilin.jiong.mapper.StudentMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 
+@Slf4j
 public class MyBatisTest {
     public static void main(String[] args) {
         String resource = "mybatis-config.xml";
@@ -22,7 +25,8 @@ public class MyBatisTest {
             Blog blog = mapper.selectBlog(101);*/
             StudentMapper studentMapper = session.getMapper(StudentMapper.class);
 
-            studentMapper.getById(2);
+           Student student = studentMapper.getById(2);
+           log.error("Student:{}",student);
 
 
 
